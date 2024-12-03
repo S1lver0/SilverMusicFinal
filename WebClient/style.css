@@ -1,0 +1,275 @@
+/* Animación para iconos de carrito y perfil */
+#cart-icon,
+#profile-icon {
+  transition: background-color 0.3s, color 0.3s;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#cart-icon:hover,
+#profile-icon:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Ajustar el margen superior de la segunda barra de navegación */
+.navbar-expand-lg {
+  margin-top: -10px;
+  /* Ajusta este valor según lo necesites */
+}
+
+/* Quitar padding de los elementos de navegación */
+.navbar-nav .nav-link {
+  padding: 0 !important;
+  /* Elimina el padding de los enlaces */
+  margin: 0 15px;
+  /* Ajusta el margen para que no se vea pegado */
+}
+
+/* Estilo para quitar el margen superior del carrusel */
+.margin0 {
+  margin-top: 2px !important;
+  padding-top: 0;
+}
+
+
+.vertical-line {
+  border: none;
+  border-left: 2px solid black; /* Grosor y color de la línea */
+  height: 300px; /* Altura de la línea */
+  width: 1px; /* Ancho de la línea */
+  margin-top: 1px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* Ajustes personalizados */
+body {
+  
+  font-family: Arial, sans-serif;
+  flex-direction: column;
+  min-height: 100vh;
+
+
+}
+.navbar {
+  padding: 0.5rem 1rem;
+}
+.navbar-brand img {
+  height: 50px;
+}
+.form-control {
+  max-width: 100%;
+}
+.carousel img {
+  width: 100%;
+  height: auto; /* Mantener proporción */
+  object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
+}
+.footer-links ul {
+  padding: 0;
+  list-style: none;
+}
+.footer-links ul li a {
+  color: white;
+  text-decoration: none;
+}
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+.social-icons a {
+  font-size: 1.5rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar-brand {
+    flex: 1;
+    text-align: center;
+  }
+  .navbar form {
+    flex-basis: 100%;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .navbar-icons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  .navbar .nav-link {
+    font-size: 1rem;
+  }
+  .carousel img {
+    max-height: 200px;
+  }
+  footer {
+    text-align: center;
+  }
+  footer .col-md-4 {
+    margin-bottom: 1rem;
+  }
+}
+
+#logo {
+  margin-right: 80px;
+}
+#iconos {
+  margin-left: 80px;
+}
+
+/* Mantener la barra de navegación en horizontal siempre */
+.navbar-nav {
+  display: flex;
+  flex-direction: row; /* Asegura que los elementos se mantengan en fila */
+  justify-content: center; /* Centra los elementos */
+}
+
+/* Reducir el tamaño de la letra en pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    font-size: 11px; /* Reducir el tamaño de la fuente */
+    margin-left: 10px;
+  }
+
+  #iconos {
+    margin-left: 0px;
+  }
+
+  /* Contenedor de la navbar */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  /* Para limitar el tamaño de los elementos y mantenerlos centrados */
+  .navbar {
+    width: 100%;
+  }
+
+  /* Reducir el tamaño de los iconos */
+  .navbar-icons .fa-lg {
+    font-size: 1.5rem;
+  }
+
+  /* Agregar margen entre los elementos */
+  .navbar .navbar-brand {
+    margin-right: 15px;
+  }
+
+  /* Ajustes responsivos para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .navbar-icons .fa-lg {
+      font-size: 1.2rem; /* Reducir el tamaño de los iconos */
+    }
+
+    .container {
+      flex-wrap: wrap; /* Asegura que los elementos no se desborden */
+      justify-content: center;
+      padding: 0 10px;
+    }
+
+    .navbar .navbar-brand {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    .navbar-icons {
+      margin-top: 10px;
+    }
+
+    .navbar-form {
+      width: 100%; /* Barra de búsqueda ocupa todo el espacio */
+    }
+  }
+}
+
+
+
+/* Estilo del sidebar */
+#categorias-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  z-index: 1050;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto cuando el sidebar se oculta */
+#categorias-sidebar.d-none {
+  transform: translateX(-100%);
+}
+
+/* Estilo para el encabezado del sidebar */
+#categorias-sidebar h5 {
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.25rem;
+}
+
+/* Estilo para los elementos de la lista de categorías */
+#lista-categorias {
+  list-style-type: none;
+  padding: 0;
+}
+
+#lista-categorias li {
+  background-color: #f8f9fa;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Efecto de hover para cada categoría */
+#lista-categorias li:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Estilo cuando una categoría es seleccionada */
+#lista-categorias li.selected {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Estilo para mostrar el link seleccionado */
+#lista-categorias li.selected:hover {
+  background-color: #218838;
+}
+
+/* Agregar un fondo oscuro cuando el sidebar está activo */
+body.sidebar-open {
+  overflow: hidden;
+}
+
+
+/* Ajustes personalizados */
+body {
+  display: flex;
+  font-family: Arial, sans-serif;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+
+footer{
+  text-align: center;
+  margin-top: auto;
+}

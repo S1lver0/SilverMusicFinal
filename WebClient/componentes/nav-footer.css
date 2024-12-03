@@ -1,0 +1,147 @@
+/* Ajustes personalizados */
+body {
+  font-family: Arial, sans-serif;
+}
+.navbar {
+  padding: 0.5rem 1rem;
+}
+.navbar-brand img {
+  height: 50px;
+}
+.form-control {
+  max-width: 100%;
+}
+.carousel img {
+  width: 100%;
+  height: auto; /* Mantener proporción */
+  object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse */
+}
+.footer-links ul {
+  padding: 0;
+  list-style: none;
+}
+.footer-links ul li a {
+  color: white;
+  text-decoration: none;
+}
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+.social-icons a {
+  font-size: 1.5rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar-brand {
+    flex: 1;
+    text-align: center;
+  }
+  .navbar form {
+    flex-basis: 100%;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .navbar-icons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  .navbar .nav-link {
+    font-size: 1rem;
+  }
+  .carousel img {
+    max-height: 200px;
+  }
+  footer {
+    text-align: center;
+  }
+  footer .col-md-4 {
+    margin-bottom: 1rem;
+  }
+}
+
+#logo {
+  margin-right: 80px;
+}
+#iconos {
+  margin-left: 80px;
+}
+
+/* Mantener la barra de navegación en horizontal siempre */
+.navbar-nav {
+  display: flex;
+  flex-direction: row; /* Asegura que los elementos se mantengan en fila */
+  justify-content: center; /* Centra los elementos */
+}
+
+/* Reducir el tamaño de la letra en pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    font-size: 11px; /* Reducir el tamaño de la fuente */
+    margin-left: 10px;
+  }
+
+  #iconos {
+    margin-left: 0px;
+  }
+
+  /* Contenedor de la navbar */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  /* Para limitar el tamaño de los elementos y mantenerlos centrados */
+  .navbar {
+    width: 100%;
+  }
+
+  /* Reducir el tamaño de los iconos */
+  .navbar-icons .fa-lg {
+    font-size: 1.5rem;
+  }
+
+  /* Agregar margen entre los elementos */
+  .navbar .navbar-brand {
+    margin-right: 15px;
+  }
+
+  /* Ajustes responsivos para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .navbar-icons .fa-lg {
+      font-size: 1.2rem; /* Reducir el tamaño de los iconos */
+    }
+
+    .container {
+      flex-wrap: wrap; /* Asegura que los elementos no se desborden */
+      justify-content: center;
+      padding: 0 10px;
+    }
+
+    .navbar .navbar-brand {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    .navbar-icons {
+      margin-top: 10px;
+    }
+
+    .navbar-form {
+      width: 100%; /* Barra de búsqueda ocupa todo el espacio */
+    }
+  }
+}
+
+
+

@@ -1,0 +1,86 @@
+
+<!-- Bootstrap CSS -->
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+rel="stylesheet"
+/>
+<!-- Font Awesome para los iconos -->
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
+
+<link rel="stylesheet" href="style.css" />
+<!-- Navbar superior con iconos -->
+<nav class="navbar navbar-light bg-light d-flex flex-wrap">
+  <!-- Contenedor centrado para los elementos de navegación -->
+  <div
+    class="container d-flex justify-content-center align-items-center w-100"
+    style="max-width: 1200px"
+  >
+    <!-- Logo centrado -->
+    <a class="navbar-brand me-4" href="index.html">
+      <img id="logo" src="/img/logoBueno.png" alt="Silver Music Logo" />
+    </a>
+
+    <!-- Barra de búsqueda -->
+    <form
+      id="search-form"
+      class="d-flex flex-grow-1 mx-2 mb-3 mb-md-0 order-2 order-md-1"
+      action="catalogo.html"
+      method="get"
+      style="max-width: 600px"
+    >
+      <input
+        id="search-input"
+        class="form-control me-2"
+        type="search"
+        name="query"
+        placeholder="Buscar..."
+        aria-label="Buscar"
+      />
+      <button id="search-button" class="btn btn-outline-dark" type="submit">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+
+    <!-- Iconos a la derecha -->
+    <div
+      id="iconos"
+      class="navbar-icons order-1 order-md-2 d-flex align-items-center"
+    >
+      <a class="nav-link d-inline me-4" href="carrito.html" id="cart-icon">
+        <i class="fas fa-shopping-cart fa-lg"></i>
+      </a>
+      <a class="nav-link d-inline" href="login.html" id="profile-icon">
+        <i class="fas fa-user fa-lg"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Segunda barra de navegación con Categorías, Contacto y Soporte, Nosotros -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <!-- Elementos de navegación -->
+    <div class="navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="../catalogo.html?query=" id="categorias-link">PRODUCTOS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">CONTACTO Y SOPORTE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">NOSOTROS</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Sidebar para categorías -->
+<div id="categorias-sidebar" class="d-none">
+  <h5>Categorías</h5>
+  <ul id="lista-categorias" class="list-group"></ul>
+</div>

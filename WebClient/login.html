@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SilverMusic</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome para los iconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="nav-container"></div>
+    <div class="container mt-5" id="login-container">
+      <div class="row justify-content-center">
+        <!-- Parte de Acceder -->
+        <div class="col-md-5">
+          <div>
+            <div class="card-header">
+              <h5>ACCEDER</h5>
+            </div>
+            <div class="card-body">
+              <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                  <label for="username">Nombre de usuario*</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    name="username"
+                    required
+                  />
+                </div>
+                <div class="form-group mt-3">
+                  <label for="password">Contraseña *</label>
+                  <div class="input-group">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      name="password"
+                      required
+                    />
+                    <button
+                      class="btn btn-outline-secondary"
+                      type="button"
+                      onclick="togglePassword('password', 'togglePasswordIcon')"
+                    >
+                      <i class="fa fa-eye" id="togglePasswordIcon"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="form-group form-check mt-3">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="rememberMe"
+                  />
+                  <label class="form-check-label" for="rememberMe"
+                    >Recuérdame</label
+                  >
+                </div>
+                <button type="submit" class="btn btn-dark btn-block mt-3">
+                  Acceso
+                </button>
+              </form>
+              <p class="mt-3">¿Olvidaste la contraseña?</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Separador vertical personalizado -->
+        <div class="col-md-1 d-flex justify-content-center">
+          <hr class="vertical-line" />
+        </div>
+
+        <!-- Parte de Registrarse -->
+        <div class="col-md-5">
+          <div>
+            <div class="card-header">
+              <h5>REGISTRARSE</h5>
+            </div>
+            <div class="card-body">
+              <form id="registerForm" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                  <label for="username">Nombre de usuario*</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username2"
+                    name="username2"
+                    required
+                  />
+                </div>
+                <div class="form-group mt-3">
+                  <label for="registerPassword">Contraseña *</label>
+                  <div class="input-group">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="registerPassword"
+                      name="registerPassword"
+                      required
+                    />
+                    <button
+                      class="btn btn-outline-secondary"
+                      type="button"
+                      onclick="togglePassword('registerPassword', 'toggleRegisterPasswordIcon')"
+                    >
+                      <i class="fa fa-eye" id="toggleRegisterPasswordIcon"></i>
+                    </button>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-dark btn-block mt-3">
+                  Registrarse
+                </button>
+              </form>
+              <p class="text-center mt-3">
+                <a href="#" style="color: black">POLÍTICA DE PRIVACIDAD</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenido del Escritorio de Cuenta -->
+    <div class="container mt-5" id="account-container" style="display: none">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div>
+            <div class="card-header">
+              <h5>Hola, <span id="welcome-username"></span></h5>
+              <p>
+                (¿no eres <span id="welcome-username2"></span>?
+                <a href="#" onclick="logout()">Cerrar sesión</a>)
+              </p>
+            </div>
+            <div class="card-body">
+              <p>
+                Desde el escritorio de tu cuenta puedes ver tus pedidos
+                recientes, gestionar tus direcciones de envío y facturación y
+                editar tu contraseña y los detalles de tu cuenta.
+              </p>
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <!-- Cambié mb-3 a mb-2 para menos margen -->
+                  <button
+                    class="btn btn-dark w-100"
+                    style="height: 60px"
+                    onclick="window.location.href='pedidos.html'"
+                  >
+                    Pedidos
+                  </button>
+                </div>
+          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Footer -->
+ <footer class="bg-dark text-white pt-4 pb-2 footer-fixed">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 text-center text-md-start">
+        <h5>Síguenos</h5>
+        <div class="social-icons">
+          <a href="#" class="text-white me-3"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" class="text-white me-3"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <h5>Suscríbete</h5>
+        <form class="d-flex justify-content-center">
+          <input
+            class="form-control me-2"
+            type="email"
+            placeholder="Correo electrónico"
+          />
+          <button class="btn btn-outline-light" type="submit">
+            Enviar
+          </button>
+        </form>
+      </div>
+      <div class="col-md-4 text-center text-md-end">
+        <h5>Enlaces útiles</h5>
+        <ul class="footer-links">
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Soporte</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+    <!-- Incluir jQuery y Bootstrap JS -->
+    <script src="/componentes/nav-footer.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS para interacción con iconos -->
+    <script src="/scripts/login.js"></script>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
